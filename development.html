@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Development – Kite</title>
+<link rel="icon" href="images/kite.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="images/kite.svg" alt="">Kite</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="development.html" aria-current="page">Development</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Development</h1>
+  <p>
+    Kite is written in Rust, with its interface in QML using Kirigami, on top of QtWebEngine.
+    It's modelled on <a href="https://invent.kde.org/network/falkon">Falkon</a> and reads
+    Falkon's bookmark and history formats.
+  </p>
+  <p>
+    <a class="button" href="https://github.com/n4n0GH/Kite"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source code</a>
+    <a class="button" href="https://github.com/n4n0GH/Kite/issues">Issues</a>
+    <a class="button" href="docs.html">Developer docs</a>
+  </p>
+
+  <h2>Building</h2>
+  <p>You need:</p>
+  <ul>
+    <li>Rust, through <a href="https://rustup.rs/">rustup</a></li>
+    <li>Qt 6.9 or newer, with QtWebEngine (Core and Quick runtime)</li>
+    <li>Kirigami (KDE Frameworks 6)</li>
+    <li>qqc2-desktop-style</li>
+  </ul>
+<pre>git clone https://github.com/n4n0GH/Kite.git
+cd Kite
+cargo build --release
+./target/release/kite            # --profile NAME, --private</pre>
+
+  <h3>Running the tests</h3>
+<pre>cargo test --workspace
+node --test crates/kite-core/src/webext/js/*.test.js crates/kite/qml/*.test.js crates/kite/plugins/*/*.test.js</pre>
+
+  <h3>Building an AppImage</h3>
+<pre>packaging/appimage/build-appimage.sh            # → dist/Kite-&lt;version&gt;-&lt;arch&gt;.AppImage
+packaging/appimage/build-appimage.sh --no-build # bundle an existing target/release/kite</pre>
+  <p>
+    The script downloads linuxdeploy and its Qt plugin on first use, then asks whether to keep
+    the result in <code>dist/</code> or install it for your user.
+  </p>
+
+  <h2>How it's put together</h2>
+  <dl>
+    <dt><code>crates/kite-core</code></dt>
+    <dd>
+      Pure Rust, unit-tested, no Qt: history, bookmarks, sessions, search and address bar
+      logic, site settings, downloads, content blocking, privacy features and the
+      WebExtensions runtime.
+    </dd>
+    <dt><code>crates/kite</code></dt>
+    <dd>The application: the QML interface and its bridge to QtWebEngine and Plasma.</dd>
+  </dl>
+  <p>
+    The <a href="docs.html">developer docs</a>
+    covers the architecture in detail, where each part of the interface is defined, and how to
+    write native plugins.
+  </p>
+
+  <h2>Contributing</h2>
+  <ul>
+    <li>Found a bug? Check <a href="faq.html">the FAQ</a>, then
+      <a href="https://github.com/n4n0GH/Kite/issues/new">open an issue</a> with your
+      distribution, Plasma version and steps to reproduce it.</li>
+    <li>Want to fix something? Fork the repository and open a pull request.
+      Run the tests first.</li>
+    <li>Page or console output goes to the terminal with <code>RUST_LOG</code>, which helps
+      when reporting problems with sites or extensions.</li>
+  </ul>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Kite is developed on <a href="https://github.com/n4n0GH/Kite">GitHub</a> and licensed under the <a href="https://github.com/n4n0GH/Kite/blob/master/LICENSE">GPL-3.0-or-later</a>.
+    Not affiliated with KDE e.V.<br>
+    Home page background: blurred from the Plasma wallpaper
+    <a href="https://invent.kde.org/plasma/breeze/-/tree/master/wallpapers/Next">Hanabi</a>
+    by Krystian Zajdel,
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  </div>
+</footer>
+
+</body>
+</html>

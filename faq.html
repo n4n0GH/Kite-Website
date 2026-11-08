@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FAQ – Kite</title>
+<link rel="icon" href="images/kite.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="images/kite.svg" alt="">Kite</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="./">Home</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="development.html">Development</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="faq.html" aria-current="page">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <h1>Frequently asked questions</h1>
+
+  <h2>General</h2>
+  <div class="faq">
+    <details>
+      <summary>Does Kite work outside KDE Plasma?</summary>
+      <div class="answer">
+      Yes, on any Linux desktop. Plasma-specific features such as KRunner search, KDE Connect,
+      KDE Wallet and the Breeze look need Plasma to be there.
+      </div>
+    </details>
+    <details>
+      <summary>Is there a Windows, macOS or mobile version?</summary>
+      <div class="answer">
+No. Kite is Linux only.
+      </div>
+    </details>
+    <details>
+      <summary>Which extensions can I use?</summary>
+      <div class="answer">
+      Firefox add-ons from <a href="https://addons.mozilla.org">addons.mozilla.org</a>, both
+      Manifest V2 and V3. Kite covers the common WebExtensions APIs, but not all of Firefox's:
+      add-ons that need containers, <code>find</code>, <code>dns</code>, themes or
+      <code>filterResponseData</code> won't work fully. Chrome Web Store extensions aren't supported.
+      </div>
+    </details>
+    <details>
+      <summary>Are plugins safe to install?</summary>
+      <div class="answer">
+        <p>
+          Only install plugins from people you trust. Unlike Firefox add-ons, a native plugin
+          runs inside Kite with no sandbox, signing or review. Once switched on, it can read
+          your saved logins, cookies and history, and see and change every page, including in
+          private windows. Installing one is like installing a program.
+        </p>
+        <p>
+          Kite asks before anything runs: an installed plugin stays off until you turn it on in
+          Settings → Plugins &amp; Extensions. If an add-on from
+          <a href="https://addons.mozilla.org">addons.mozilla.org</a> can do the job, prefer it,
+          as add-ons only get the permissions they ask for.
+        </p>
+      </div>
+    </details>
+    <details>
+      <summary>Can I bring my bookmarks and passwords from another browser?</summary>
+      <div class="answer">
+      <p>
+        Yes. The first time you start Kite, it looks for other browsers on your computer and
+        offers to import their bookmarks: Firefox, LibreWolf, Waterfox, Chrome, Chromium, Brave,
+        Edge, Vivaldi, Opera and Falkon, including Flatpak and Snap installs. You can come back
+        to that page any time at <code>kite:welcome</code>.
+      </p>
+      <p>
+        Bookmarks can also be imported from an exported HTML file or Falkon's
+        <code>bookmarks.json</code>. Passwords come in from CSV files (Firefox, Chrome,
+        Bitwarden) or Falkon's XML export.
+      </p>
+      </div>
+    </details>
+    <details>
+      <summary>Kite doesn't show up in KRunner or the application launcher.</summary>
+      <div class="answer">
+      After installing, restart KRunner once with
+      <code>systemctl --user restart plasma-krunner</code>. The application launcher picks Kite
+      up at your next login.
+      </div>
+    </details>
+  </div>
+
+  <h2 id="comparison">How does Kite compare to other browsers?</h2>
+  <p>
+    Kite isn't the right browser for everyone. Here is where it does better, and where it
+    doesn't. For the long version, see the
+    <a href="https://github.com/n4n0GH/Kite/blob/master/FEATURE_COMPARISON.md">full feature comparison</a>.
+  </p>
+  <div class="table-scroll">
+    <table>
+      <thead>
+        <tr>
+          <th scope="col">Feature</th>
+          <th scope="col" class="kite">Kite</th>
+          <th scope="col">Falkon</th>
+          <th scope="col">Chrome</th>
+          <th scope="col">Firefox</th>
+          <th scope="col">Brave</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Native KDE look (Breeze, colour scheme, icons)</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Can follow the Qt or GTK theme for some colours, but draws its own interface.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Follows the GTK theme, not KDE&#x27;s own widgets.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Can follow the Qt or GTK theme for some colours, but draws its own interface.">Partly</span></td>
+        </tr>
+        <tr>
+          <th scope="row">KDE Wallet for passwords</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Keeps passwords in its own store.">No</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <th scope="row">KRunner, KDE Connect, media controls</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="KDE Connect and sharing through its KDE Frameworks plugin; no KRunner search.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Through the Plasma Browser Integration add-on.">Add-on</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Through the Plasma Browser Integration add-on.">Add-on</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Through the Plasma Browser Integration add-on.">Add-on</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Built-in ad and tracker blocking</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Only blocks ads Google classes as abusive.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Blocks known trackers, not ads.">Partly</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Full uBlock Origin (Manifest V2)</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="No WebExtensions support at all.">No</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Manifest V2 is gone; only uBlock Origin Lite runs.">No</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Kept Manifest V2 for a few extensions only, for a limited time.">Limited</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Extension store</th>
+          <td class="c kite">Firefox add-ons</td>
+          <td class="c">Falkon plugins</td>
+          <td class="c">Chrome Web Store</td>
+          <td class="c">Firefox add-ons</td>
+          <td class="c">Chrome Web Store</td>
+        </tr>
+        <tr>
+          <th scope="row">Vertical and tree-style tabs</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Through its Vertical Tabs plugin.">Plugin</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Vertical tabs are experimental; no tree-style tabs.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Vertical tabs built in; tree-style needs an add-on.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Vertical tabs, but no tree-style nesting.">Vertical only</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Split view with tabs per side</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Not available.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Two pages joined in a single tab, sharing one tab strip.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Two pages joined in a single tab, sharing one tab strip. New, or still in testing.">Partly</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Two pages joined in a single tab, sharing one tab strip.">Partly</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Container tabs</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Not available.">No</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Uses separate profiles instead.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Through Mozilla&#x27;s Multi-Account Containers add-on.">Add-on</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Still being rolled out.">Partly</span></td>
+        </tr>
+        <tr>
+          <th scope="row">No AI assistant, crypto or rewards built in</th>
+          <td class="c kite"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Ships with Gemini built in.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Has an optional AI chatbot sidebar.">Partly</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Ships with the Leo assistant, a crypto wallet and Brave Rewards, all optional.">No</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Sync between devices</th>
+          <td class="c kite"><span class="no tip" tabindex="0" data-tip="No account system, so nothing to sync with.">No</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="No account system, so nothing to sync with.">No</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Passkeys</th>
+          <td class="c kite"><span class="no tip" tabindex="0" data-tip="Not supported yet.">No</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Not supported.">No</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Translation</th>
+          <td class="c kite"><span class="part tip" tabindex="0" data-tip="Not built in; Firefox translation add-ons work.">Add-on</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Not built in.">No</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+          <td class="c"><span class="yes">Yes</span></td>
+        </tr>
+        <tr>
+          <th scope="row">WebGPU</th>
+          <td class="c kite"><span class="no tip" tabindex="0" data-tip="QtWebEngine's Chromium 140 doesn't enable WebGPU on Linux.">No</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="QtWebEngine's Chromium doesn't enable WebGPU on Linux.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="On by default only for Intel Gen12+ GPUs, and NVIDIA on Wayland; others need a flag.">Partly</span></td>
+          <td class="c"><span class="no tip" tabindex="0" data-tip="Only in Nightly builds or behind a setting on Linux.">No</span></td>
+          <td class="c"><span class="part tip" tabindex="0" data-tip="Built on Chrome's Chromium, so likely the same GPU limits.">Partly</span></td>
+        </tr>
+        <tr>
+          <th scope="row">Platforms</th>
+          <td class="c kite">Linux</td>
+          <td class="c">Linux, Windows</td>
+          <td class="c">All</td>
+          <td class="c">All</td>
+          <td class="c">All</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="note">As of November 2026.</p>
+
+  <h2>Known issues</h2>
+  <div class="faq">
+    <details>
+      <summary>After tightening privacy settings, some sites stopped working.</summary>
+      <div class="answer">
+      <p>
+        The stricter you set Kite, the more sites break. Common examples:
+      </p>
+      <ul>
+        <li>Embedded YouTube videos don't play, or show an error.</li>
+        <li>Signing in to Google services (Gmail, YouTube, Drive) fails or loops.</li>
+        <li>Maps don't load, or show blank tiles.</li>
+        <li>Video calls can't connect.</li>
+      </ul>
+      <p>
+        The usual culprits are blocking all cookies, fingerprint protection, strict WebRTC
+        settings and aggressive filter lists. Rather than loosening them everywhere, use the
+        site settings button in the address bar to relax them for the site that's
+        misbehaving, and try a private window to check whether your settings are the cause.
+      </p>
+      </div>
+    </details>
+    <details>
+      <summary>Picture-in-picture doesn't work on some videos.</summary>
+      <div class="answer">
+      Kite brings its own picture-in-picture, since QtWebEngine has none. It doesn't work for
+      videos inside frames, and sites can't start it themselves.
+      </div>
+    </details>
+  </div>
+
+  <h2>Known limitations</h2>
+  <div class="faq">
+    <details>
+      <summary>Why isn't WebGPU available?</summary>
+      <div class="answer">
+      Kite's engine is QtWebEngine, which is built from Chromium. Chromium doesn't enable
+      WebGPU on Linux yet, so Kite can't either. It will arrive once Chromium ships it on Linux
+      and QtWebEngine catches up.
+      </div>
+    </details>
+    <details>
+      <summary>Why is Kite's engine older than Chrome's?</summary>
+      <div class="answer">
+      QtWebEngine follows Chromium a few releases behind, and Kite gets newer engines as
+      new Qt versions come out. Qt backports Chromium's security fixes in between.
+      </div>
+    </details>
+    <details>
+      <summary>Is there sync, passkeys or translation?</summary>
+      <div class="answer">
+      Not yet. Kite has no account system, so no sync between devices. Passkeys (WebAuthn),
+      card autofill, built-in translation and installing sites as apps are also missing.
+      </div>
+    </details>
+    <details>
+      <summary>Can I use browser themes?</summary>
+      <div class="answer">
+      No. Kite follows your KDE colour scheme and icon theme instead. Change those in
+      System Settings and Kite follows along.
+      </div>
+    </details>
+  </div>
+
+  <p>
+    Not answered here? Ask on the
+    <a href="https://github.com/n4n0GH/Kite/issues">issue tracker</a>.
+  </p>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Kite is developed on <a href="https://github.com/n4n0GH/Kite">GitHub</a> and licensed under the <a href="https://github.com/n4n0GH/Kite/blob/master/LICENSE">GPL-3.0-or-later</a>.
+    Not affiliated with KDE e.V.<br>
+    Home page background: blurred from the Plasma wallpaper
+    <a href="https://invent.kde.org/plasma/breeze/-/tree/master/wallpapers/Next">Hanabi</a>
+    by Krystian Zajdel,
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,174 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Kite – The browser for Plasma</title>
+<meta name="description" content="Kite is a web browser for KDE Plasma, written in Rust, with Firefox add-ons, tree-style tabs, split view and built-in content blocking.">
+<link rel="icon" href="images/kite.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./"><img src="images/kite.svg" alt="">Kite</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        <li><a href="./" aria-current="page">Home</a></li>
+        <li><a href="download.html">Download</a></li>
+        <li><a href="development.html">Development</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="faq.html">FAQ</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<div class="hero-bg">
+<div class="wrap">
+
+  <section class="hero">
+    <img class="logo" src="images/kite.svg" alt="Kite logo">
+    <h1>Kite</h1>
+    <p class="tagline">The browser for Plasma.</p>
+    <div class="buttons">
+      <a class="button primary" href="download.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Download</a>
+      <a class="button" href="https://github.com/n4n0GH/Kite"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source Code</a>
+    </div>
+  </section>
+
+  <figure class="shot">
+    <img src="images/screenshots/startpage.png" alt="Kite showing its empty start page"
+         onerror="this.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/screenshots/startpage.png</div>'">
+    <figcaption>Kite on Plasma. Right at home.</figcaption>
+  </figure>
+
+</div>
+</div>
+
+<div class="wrap">
+
+  <h2>Why Kite</h2>
+  <div class="pillars">
+    <div class="pillar">
+      <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3zM9 12l2 2 4-4"/></svg>
+      <h3>Privacy &amp; content blocking</h3>
+      <p>Your business is your business. Ads and trackers? Blocked. Fingerprinting? Scrambled. Want the real uBlock Origin? Chrome won't let you. Kite will.</p>
+    </div>
+    <div class="pillar">
+      <svg class="pillar-icon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M5 2a1 1 0 1 0 0 2 1 1 0 0 0 0-2zM10 2L8.5 3.5 11 6 8.5 8.5 10 10l4-4-4-4zM3.25 6.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5zM6.5 11a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3z"/></svg>
+      <h3>Part of your Plasma desktop</h3>
+      <p>Breeze. Your colours. Your icons. KDE Wallet. Media keys. KRunner. KDE Connect. Other browsers visit Plasma. Kite lives here.</p>
+    </div>
+    <div class="pillar">
+      <svg class="pillar-icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M14 5l-4 14"/></svg>
+      <h3>Open source</h3>
+      <p>Every line, out in the open. Read it, build it, change it, under the <a href="https://github.com/n4n0GH/Kite/blob/master/LICENSE">GPL-3.0-or-later</a>. Written in Rust, because you deserve a browser that's built properly.</p>
+    </div>
+  </div>
+
+  <h2>Take a closer look</h2>
+  <!--
+    Each slide belongs to the feature named in its data-for. A feature can have any
+    number of slides: add another <figure class="explorer-slide" data-for="tabs"> right
+    after its first one. Screenshots go in images/features/.
+  -->
+  <div class="explorer">
+    <div class="explorer-list">
+      <details name="explorer" data-key="plugins" open>
+        <summary>Powerful plugin system</summary>
+        <p>Mouse gestures? Plugin. Vim keys? Plugin. Your idea? <a href="docs.html?doc=plugins">Plugin.</a> And if someone's already built it, it's probably waiting on <a href="https://addons.mozilla.org">addons.mozilla.org</a>.</p>
+      </details>
+      <details name="explorer" data-key="tabs">
+        <summary>Tabs your way</summary>
+        <p>Top. Bottom. Left. Right. Trees. Groups. Containers. Named sessions. Put your tabs wherever you want them. No add-ons, no CSS hacks, no permission slip.</p>
+      </details>
+      <details name="explorer" data-key="splitview">
+        <summary>Split view</summary>
+        <p>Two pages. One window. Each side gets its own tabs, because that's how it should have worked all along.</p>
+      </details>
+      <details name="explorer" data-key="power">
+        <summary>For power users</summary>
+        <p>Every action, one shortcut away. Every setting, one search away. Rebind any key, browse with Vim keys, give any site its own CSS, scripts or dark mode. Kite assumes you know what you're doing.</p>
+      </details>
+    </div>
+    <div class="explorer-carousel" aria-roledescription="carousel" aria-label="Screenshots">
+      <div class="explorer-viewport">
+        <div class="explorer-track">
+        <figure class="explorer-slide" data-for="plugins">
+          <a href="images/features/plugins.png"><img src="images/features/plugins.png" alt="Screenshot: Powerful plugin system" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/plugins.png</div>'"></a>
+        </figure>
+        <figure class="explorer-slide" data-for="tabs">
+          <a href="images/features/tabs.png"><img src="images/features/tabs.png" alt="Screenshot: Tabs your way" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/tabs.png</div>'"></a>
+        </figure>
+        <figure class="explorer-slide" data-for="tabs">
+          <a href="images/features/tabs-2.png"><img src="images/features/tabs-2.png" alt="Screenshot: Tabs your way" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/tabs-2.png</div>'"></a>
+        </figure>
+        <figure class="explorer-slide" data-for="tabs">
+          <a href="images/features/tabs-3.png"><img src="images/features/tabs-3.png" alt="Screenshot: Tabs your way" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/tabs-3.png</div>'"></a>
+        </figure>
+        <figure class="explorer-slide" data-for="splitview">
+          <a href="images/features/splitview.png"><img src="images/features/splitview.png" alt="Screenshot: Split view" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/splitview.png</div>'"></a>
+        </figure>
+        <figure class="explorer-slide" data-for="power">
+          <a href="images/features/power.png"><img src="images/features/power.png" alt="Screenshot: For power users" loading="lazy"
+             onerror="this.parentNode.outerHTML='<div class=&quot;missing-image&quot;>Screenshot missing: images/features/power.png</div>'"></a>
+        </figure>
+        </div>
+      </div>
+      <div class="explorer-controls">
+        <button type="button" class="explorer-prev" aria-label="Previous screenshot"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="explorer-dots"></div>
+        <button type="button" class="explorer-next" aria-label="Next screenshot"><svg viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 5l7 7-7 7"/></svg></button>
+      </div>
+    </div>
+  </div>
+
+  <h2>See the difference</h2>
+  <p>Same page. Different browser. Drag to see which one belongs on your desktop.</p>
+  <div class="compare-tabs" role="group" aria-label="Browser to compare with">
+    <!-- Add a browser: one more button. Screenshots must share the same dimensions. -->
+    <button type="button" data-name="Falkon" data-src="images/compare/falkon.png">Falkon</button>
+    <button type="button" data-name="Firefox" data-src="images/compare/firefox.png">Firefox</button>
+    <button type="button" data-name="Chrome" data-src="images/compare/chrome.png">Chrome</button>
+    <button type="button" data-name="Brave" data-src="images/compare/brave.png">Brave</button>
+  </div>
+  <div class="compare" data-kite="images/compare/kite.png"></div>
+  <noscript><p class="note">The comparison slider needs JavaScript.</p></noscript>
+  <p>Want the details? We've got a <a href="faq.html#comparison">whole table</a>, including the parts where Kite loses.</p>
+
+  <section class="cta">
+    <h2>Try Kite</h2>
+    <p>One file. No root. No catch.</p>
+    <div class="buttons">
+      <a class="button primary" href="download.html"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Download</a>
+      <a class="button" href="https://github.com/n4n0GH/Kite"><svg class="icon" viewBox="0 0 16 16" aria-hidden="true" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8z"/></svg>Source Code</a>
+    </div>
+  </section>
+
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    Kite is developed on <a href="https://github.com/n4n0GH/Kite">GitHub</a> and licensed under the <a href="https://github.com/n4n0GH/Kite/blob/master/LICENSE">GPL-3.0-or-later</a>.
+    Not affiliated with KDE e.V.<br>
+    Home page background: blurred from the Plasma wallpaper
+    <a href="https://invent.kde.org/plasma/breeze/-/tree/master/wallpapers/Next">Hanabi</a>
+    by Krystian Zajdel,
+    <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA 4.0</a>.
+  </div>
+</footer>
+
+<script src="assets/compare.js"></script>
+<script src="assets/explorer.js"></script>
+</body>
+</html>
