@@ -49,7 +49,7 @@
 <pre>git clone https://github.com/n4n0GH/Kite.git
 cd Kite
 cargo build --release
-./target/release/kite            # --profile NAME, --private</pre>
+./target/release/kite            # --profile NAME, --private, --debug</pre>
 
   <h3>Running the tests</h3>
 <pre>cargo test --workspace
@@ -87,8 +87,14 @@ packaging/appimage/build-appimage.sh --no-build # bundle an existing target/rele
       distribution, Plasma version and steps to reproduce it.</li>
     <li>Want to fix something? Fork the repository and open a pull request.
       Run the tests first.</li>
+    <li>Kite keeps a log of warnings and errors in
+      <code>~/.local/share/kite/logs/&lt;profile&gt;/kite.log</code> (the run before is
+      <code>kite.prev.log</code>), and after a crash a report in <code>last-crash.txt</code>.
+      Attach them to bug reports. Addresses from private windows are scrambled in both.</li>
     <li>Page or console output goes to the terminal with <code>RUST_LOG</code>, which helps
       when reporting problems with sites or extensions.</li>
+    <li><code>kite --debug</code> shows tools for looking into Kite. For now, the lists
+      Dangerous Sites checks against, and how an address is checked (Settings → Browsing).</li>
   </ul>
 
 </main>

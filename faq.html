@@ -262,6 +262,38 @@ No. Kite is Linux only.
       </div>
     </details>
     <details>
+      <summary>A site says my browser isn't supported, or refuses to load.</summary>
+      <div class="answer">
+      <p>
+        Some sites check the user agent, the name your browser gives itself, and turn away
+        browsers they don't recognise. Kite can give a different one, for all sites in
+        Settings → Browsing, or for one site with the site settings button in the address bar.
+        Choose a common browser's, Kite's own (naming QtWebEngine), or type your own. Pages see
+        the same name the server does.
+      </p>
+      <p>
+        Some sites need it the other way round: invent.kde.org, for one, turns away the common
+        user agent and lets Kite's own through.
+      </p>
+      </div>
+    </details>
+    <details>
+      <summary>Kite crashed. How do I report it?</summary>
+      <div class="answer">
+      <p>
+        The next time you start Kite, it shows a report of the crash, with buttons to view it,
+        copy it, or open its folder. You can find it again under Help, in the command palette,
+        or in Settings → General. Please
+        <a href="https://github.com/n4n0GH/Kite/issues/new">open an issue</a> and attach it.
+      </p>
+      <p>
+        Nothing is sent anywhere. The report and Kite's log stay in
+        <code>~/.local/share/kite/logs/&lt;profile&gt;/</code>, and addresses from private
+        windows are scrambled in both.
+      </p>
+      </div>
+    </details>
+    <details>
       <summary>Picture-in-picture doesn't work on some videos.</summary>
       <div class="answer">
       Kite brings its own picture-in-picture, since QtWebEngine has none. It doesn't work for
