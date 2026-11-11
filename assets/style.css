@@ -71,6 +71,31 @@ pre {
   overflow-x: auto;
 }
 
+/* Copy button on code blocks (added by assets/highlight.js) */
+.code-block { position: relative; margin: 1em 0; }
+.code-block pre { margin: 0; }
+.copy-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  padding: 0.15em 0.6em;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  background: var(--bg);
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.8em;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.12s;
+}
+.code-block:hover .copy-button,
+.copy-button:focus-visible { opacity: 1; }
+.copy-button:hover { border-color: var(--accent); color: var(--fg); }
+@media (hover: none) {
+  .copy-button { opacity: 1; }
+}
+
 /* Syntax highlighting (classes from highlight.js, see assets/highlight.js) */
 .hljs-comment, .hljs-quote { color: var(--hl-comment); font-style: italic; }
 .hljs-keyword, .hljs-selector-tag, .hljs-doctag, .hljs-meta { color: var(--hl-keyword); }
