@@ -46,17 +46,17 @@
     <li>Kirigami (KDE Frameworks 6)</li>
     <li>qqc2-desktop-style</li>
   </ul>
-<pre>git clone https://github.com/n4n0GH/Kite.git
+<pre class="language-sh">git clone https://github.com/n4n0GH/Kite.git
 cd Kite
 cargo build --release
 ./target/release/kite            # --profile NAME, --private, --debug</pre>
 
   <h3>Running the tests</h3>
-<pre>cargo test --workspace
+<pre class="language-sh">cargo test --workspace
 node --test crates/kite-core/src/webext/js/*.test.js crates/kite/qml/*.test.js crates/kite/plugins/*/*.test.js</pre>
 
   <h3>Building an AppImage</h3>
-<pre>packaging/appimage/build-appimage.sh            # → dist/Kite-&lt;version&gt;-&lt;arch&gt;.AppImage
+<pre class="language-sh">packaging/appimage/build-appimage.sh            # → dist/Kite-&lt;version&gt;-&lt;arch&gt;.AppImage
 packaging/appimage/build-appimage.sh --no-build # bundle an existing target/release/kite</pre>
   <p>
     The script downloads linuxdeploy and its Qt plugin on first use, then asks whether to keep
@@ -110,5 +110,7 @@ packaging/appimage/build-appimage.sh --no-build # bundle an existing target/rele
   </div>
 </footer>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="assets/highlight.js"></script>
 </body>
 </html>

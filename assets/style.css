@@ -12,6 +12,13 @@
   --yes: #1e7d35;
   --part: #9a6700;
   --no: #b3261e;
+  --hl-comment: #6b7075;
+  --hl-keyword: #8e3fa8;
+  --hl-string: #1e7d35;
+  --hl-number: #9a6700;
+  --hl-title: #1d6fa5;
+  --hl-type: #0b7378;
+  --hl-builtin: #b3261e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -27,6 +34,13 @@
     --yes: #5fcf7a;
     --part: #e0b34a;
     --no: #f07b72;
+    --hl-comment: #8f959b;
+    --hl-keyword: #c79bea;
+    --hl-string: #5fcf7a;
+    --hl-number: #e0b34a;
+    --hl-title: #6cc1f0;
+    --hl-type: #5fd0d0;
+    --hl-builtin: #f07b72;
   }
 }
 
@@ -56,6 +70,20 @@ pre {
   padding: 0.75em 1em;
   overflow-x: auto;
 }
+
+/* Syntax highlighting (classes from highlight.js, see assets/highlight.js) */
+.hljs-comment, .hljs-quote { color: var(--hl-comment); font-style: italic; }
+.hljs-keyword, .hljs-selector-tag, .hljs-doctag, .hljs-meta { color: var(--hl-keyword); }
+.hljs-string, .hljs-regexp, .hljs-char.escape_, .hljs-addition { color: var(--hl-string); }
+.hljs-number, .hljs-literal, .hljs-symbol, .hljs-attr, .hljs-attribute { color: var(--hl-number); }
+.hljs-title, .hljs-section, .hljs-name { color: var(--hl-title); }
+.hljs-type, .hljs-title.class_, .hljs-property { color: var(--hl-type); }
+.hljs-built_in, .hljs-variable, .hljs-template-variable, .hljs-deletion { color: var(--hl-builtin); }
+/* Shell: highlight.js takes words like "clone" and "test" for builtins anywhere */
+[data-highlighted="Bash"] .hljs-built_in { color: inherit; }
+.hljs-emphasis { font-style: italic; }
+.hljs-strong { font-weight: bold; }
+
 kbd {
   border: 1px solid var(--border);
   border-bottom-width: 2px;

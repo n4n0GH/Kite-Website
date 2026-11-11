@@ -55,6 +55,7 @@
     .then(function (r) { if (!r.ok) throw new Error(r.status); return r.text(); })
     .then(function (md) {
       out.innerHTML = DOMPurify.sanitize(marked.parse(md));
+      if (window.kiteHighlight) kiteHighlight(out);
 
       // Heading ids like GitHub's, so #anchors inside the docs work.
       var seen = {};
