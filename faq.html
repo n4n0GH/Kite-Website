@@ -70,6 +70,78 @@ No. Kite is Linux only.
       </div>
     </details>
     <details>
+      <summary>Which plugins come with Kite?</summary>
+      <div class="answer">
+      <p>
+        Mouse gestures, Vim keys, Reader View, Picture-in-Picture, Plasma Integration and
+        YouTube Download. Switch them on or off in Settings → Plugins &amp; Extensions, or from
+        the command palette. Each has its own settings page there.
+      </p>
+      <p>
+        YouTube Download adds a button to the address bar on YouTube videos, which saves the
+        video in the quality you choose. It's off by default and needs
+        <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> installed, and ffmpeg for the
+        best quality. Without yt-dlp the button doesn't show.
+      </p>
+      </div>
+    </details>
+    <details>
+      <summary>Why is my private window purple?</summary>
+      <div class="answer">
+      So you can tell it from a normal window at a glance. Kite colours a private window's
+      toolbars, tab bar and, on Plasma, its titlebar a dark violet. To turn it off, untick
+      "Purple chrome" in Settings → Privacy → Private Windows.
+      </div>
+    </details>
+    <details>
+      <summary>How fast is Kite?</summary>
+      <div class="answer">
+      <p>Measured for the 0.9.9 release:</p>
+      <div class="table-scroll">
+        <table>
+          <thead>
+            <tr>
+              <th scope="col"></th>
+              <th scope="col" class="kite">Kite 0.9.9</th>
+              <th scope="col">Falkon 26.08.2</th>
+              <th scope="col">Firefox 158</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Startup (median of 6)</th>
+              <td class="c kite">0.72 s</td>
+              <td class="c"><strong>0.60 s</strong></td>
+              <td class="c">1.06 s</td>
+            </tr>
+            <tr>
+              <th scope="row">Memory, 5 sites (median of 3)</th>
+              <td class="c kite"><strong>778 MB</strong></td>
+              <td class="c">895 MB</td>
+              <td class="c">1375 MB</td>
+            </tr>
+            <tr>
+              <th scope="row">Idle CPU (median of 3)</th>
+              <td class="c kite"><strong>3.7 %</strong></td>
+              <td class="c">7.8 %</td>
+              <td class="c">12.0 %</td>
+            </tr>
+            <tr>
+              <th scope="row">Speedometer 3.1</th>
+              <td class="c kite">24.5 ± 1.0</td>
+              <td class="c"><strong>26.0</strong> ± 1.7</td>
+              <td class="c">25.9 ± 1.3</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p>
+        The best result in each row is in bold. The releases on the way to 1.0 will focus on
+        performance.
+      </p>
+      </div>
+    </details>
+    <details>
       <summary>Can I bring my bookmarks and passwords from another browser?</summary>
       <div class="answer">
       <p>
@@ -275,6 +347,16 @@ No. Kite is Linux only.
         Some sites need it the other way round: invent.kde.org, for one, turns away the common
         user agent and lets Kite's own through.
       </p>
+      </div>
+    </details>
+    <details>
+      <summary>A site won't let me right-click or select text.</summary>
+      <div class="answer">
+      Kite doesn't let pages keep either from you. When a page cancels the right-click menu
+      without showing one of its own, Kite opens its menu anyway, and Shift+right-click always
+      opens Kite's. Text a page blocks from being selected can still be selected and copied.
+      Both are on by default and can be turned off in Settings → Browsing. Web apps' own menus
+      and controls are left alone.
       </div>
     </details>
     <details>
