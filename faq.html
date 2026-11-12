@@ -81,7 +81,7 @@ No. Kite is Linux only.
         YouTube Download adds a button to the address bar on YouTube videos, which saves the
         video in the quality you choose. It's off by default and needs
         <a href="https://github.com/yt-dlp/yt-dlp">yt-dlp</a> installed, and ffmpeg for the
-        best quality. Without yt-dlp the button doesn't show.
+        best quality. Without yt-dlp the button doesn't show. The Flatpak comes with yt-dlp.
       </p>
       </div>
     </details>
@@ -149,6 +149,11 @@ No. Kite is Linux only.
         offers to import their bookmarks: Firefox, LibreWolf, Waterfox, Chrome, Chromium, Brave,
         Edge, Vivaldi, Opera and Falkon, including Flatpak and Snap installs. You can come back
         to that page any time at <code>kite:welcome</code>.
+      </p>
+      <p>
+        The Flatpak can't see other browsers' profiles from inside its sandbox, unless you
+        allow it with Flatseal or <code>flatpak override</code>. Importing from files works
+        either way.
       </p>
       <p>
         Bookmarks can also be imported from an exported HTML file or Falkon's
@@ -370,8 +375,9 @@ No. Kite is Linux only.
       </p>
       <p>
         Nothing is sent anywhere. The report and Kite's log stay in
-        <code>~/.local/share/kite/logs/&lt;profile&gt;/</code>, and addresses from private
-        windows are scrambled in both.
+        <code>~/.local/share/kite/logs/&lt;profile&gt;/</code>
+        (<code>~/.var/app/io.github.n4n0gh.kite/data/kite/logs/&lt;profile&gt;/</code> for the
+        Flatpak), and addresses from private windows are scrambled in both.
       </p>
       </div>
     </details>

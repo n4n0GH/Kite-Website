@@ -63,6 +63,20 @@ packaging/appimage/build-appimage.sh --no-build # bundle an existing target/rele
     the result in <code>dist/</code> or install it for your user.
   </p>
 
+  <h3>Building a Flatpak</h3>
+<pre class="language-sh">flatpak-builder --user --install --install-deps-from=flathub --force-clean build-flatpak flatpak/io.github.n4n0gh.kite.yml
+flatpak run io.github.n4n0gh.kite</pre>
+  <p>
+    The manifest builds on the KDE runtime and Flathub's QtWebEngine base app, with Rust from
+    the SDK's extension. The build is offline: <code>flatpak/cargo-sources.json</code> lists
+    every crate, so run <code>flatpak/update-cargo-sources.py</code> after
+    <code>Cargo.lock</code> changes.
+  </p>
+  <p>
+    Publishing a release on GitHub builds the Flatpak, attaches <code>kite.flatpak</code> to
+    the release, and publishes the repository that installed copies update from.
+  </p>
+
   <h2>How it's put together</h2>
   <dl>
     <dt><code>crates/kite-core</code></dt>
@@ -90,6 +104,7 @@ packaging/appimage/build-appimage.sh --no-build # bundle an existing target/rele
     <li>Kite keeps a log of warnings and errors in
       <code>~/.local/share/kite/logs/&lt;profile&gt;/kite.log</code> (the run before is
       <code>kite.prev.log</code>), and after a crash a report in <code>last-crash.txt</code>.
+      The Flatpak keeps them under <code>~/.var/app/io.github.n4n0gh.kite/data/kite/logs</code>.
       Attach them to bug reports. Addresses from private windows are scrambled in both.</li>
     <li>Page or console output goes to the terminal with <code>RUST_LOG</code>, which helps
       when reporting problems with sites or extensions.</li>

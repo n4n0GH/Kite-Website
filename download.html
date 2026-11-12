@@ -26,7 +26,7 @@
 
 <main class="wrap">
 
-  <h1>Download Kite <span data-version>0.9.9</span></h1>
+  <h1>Download Kite <span data-version>0.9.10</span></h1>
   <p class="note" id="release-info">
     Pre-release ·
     <a href="https://github.com/n4n0GH/Kite/releases">Release notes</a>
@@ -38,12 +38,31 @@
 
   <div class="downloads">
     <div class="download-box">
+      <h3>Flatpak</h3>
+      <p>Installs from Kite's own repository and updates together with your other applications.</p>
+      <p>
+        <a class="button primary" href="https://n4n0gh.github.io/Kite/kite.flatpakref">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Install Kite
+          <small>x86_64</small>
+        </a>
+      </p>
+      <p>Open the file with Discover or another software centre, or use a terminal:</p>
+<pre class="language-sh">flatpak install --user https://n4n0gh.github.io/Kite/kite.flatpakref
+flatpak run io.github.n4n0gh.kite</pre>
+      <p class="note">
+        Or download
+        <a id="dl-flatpak" href="https://github.com/n4n0GH/Kite/releases/download/v0.9.10/kite.flatpak">kite.flatpak</a><span id="dl-flatpak-size"></span>,
+        a single file that updates from the same repository.
+      </p>
+    </div>
+
+    <div class="download-box">
       <h3>AppImage</h3>
-      <p>One file with everything bundled. Make it executable and run it.</p>
+      <p>One file with everything bundled, no Flatpak needed. Make it executable and run it.</p>
       <p>
         <a class="button primary" id="dl-appimage"
-           href="https://github.com/n4n0GH/Kite/releases/download/v0.9.9/Kite-0.9.9-x86_64.AppImage">
-          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Kite-<span data-version>0.9.9</span>-x86_64.AppImage
+           href="https://github.com/n4n0GH/Kite/releases/download/v0.9.10/Kite-0.9.10-x86_64.AppImage">
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3v12M7 10l5 5 5-5M4 20h16"/></svg>Kite-<span data-version>0.9.10</span>-x86_64.AppImage
           <small id="dl-appimage-size">x86_64</small>
         </a>
       </p>
@@ -56,13 +75,39 @@
       <p>The source of this release, to build yourself.</p>
       <p>
         <a class="button" id="dl-targz"
-           href="https://github.com/n4n0GH/Kite/archive/refs/tags/v0.9.9.tar.gz"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"/></svg>tar.gz</a>
+           href="https://github.com/n4n0GH/Kite/archive/refs/tags/v0.9.10.tar.gz"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"/></svg>tar.gz</a>
         <a class="button" id="dl-zip"
-           href="https://github.com/n4n0GH/Kite/archive/refs/tags/v0.9.9.zip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"/></svg>zip</a>
+           href="https://github.com/n4n0GH/Kite/archive/refs/tags/v0.9.10.zip"><svg class="icon" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 4h18v4H3zM5 8v12h14V8M10 12h4"/></svg>zip</a>
       </p>
       <p>Build instructions are on the <a href="development.html">Development</a> page.</p>
     </div>
   </div>
+
+  <h2>Flatpak or AppImage?</h2>
+  <p>
+    Both are the same Kite. The Flatpak is a smaller download, updates itself, and adds itself to
+    your application launcher. It needs the KDE runtime from
+    <a href="https://flathub.org/setup">Flathub</a>, which is fetched along with it if you
+    don't have it yet, and it comes with yt-dlp for the YouTube Download plugin. The AppImage
+    needs nothing installed.
+  </p>
+  <p>
+    The Flatpak runs in a sandbox, where a few things are off unless you allow them with
+    <a href="https://flathub.org/apps/com.github.tchx84.Flatseal">Flatseal</a> or
+    <code>flatpak override</code>:
+  </p>
+  <ul>
+    <li>native messaging hosts, such as the one the KeePassXC extension talks to</li>
+    <li>importing from other browsers' profiles</li>
+    <li>Web MIDI (<code>--device=all</code>)</li>
+    <li>placing the picture-in-picture window on Wayland
+      (<code>--talk-name=org.kde.KWin</code>)</li>
+  </ul>
+  <p>
+    Each keeps its profiles apart: the Flatpak's are in
+    <code>~/.var/app/io.github.n4n0gh.kite/data/kite</code>, the AppImage's in
+    <code>~/.local/share/kite</code>.
+  </p>
 
   <h2>Install the AppImage into your menu</h2>
   <p>
@@ -70,7 +115,7 @@
     Kite then shows up in the application launcher and can be set as the default browser
     in System Settings:
   </p>
-<pre class="language-sh">packaging/appimage/install-appimage.sh Kite-<span data-version>0.9.9</span>-x86_64.AppImage</pre>
+<pre class="language-sh">packaging/appimage/install-appimage.sh Kite-<span data-version>0.9.10</span>-x86_64.AppImage</pre>
   <p>
     This puts the AppImage at <code>~/.local/bin/kite</code> and adds a desktop file and icon
     under <code>~/.local/share</code>. To uninstall, delete those three files. Running the

@@ -35,6 +35,13 @@
         if (size) size.textContent = (appimage.size / 1048576).toFixed(0) + " MB";
       }
 
+      var flatpak = rel.assets.find(function (a) { return /\.flatpak$/.test(a.name); });
+      if (flatpak && el("dl-flatpak")) {
+        el("dl-flatpak").href = flatpak.browser_download_url;
+        var fsize = el("dl-flatpak-size");
+        if (fsize) fsize.textContent = " (" + (flatpak.size / 1048576).toFixed(0) + " MB)";
+      }
+
       var base = "https://github.com/" + REPO + "/archive/refs/tags/" + tag;
       if (el("dl-targz")) el("dl-targz").href = base + ".tar.gz";
       if (el("dl-zip")) el("dl-zip").href = base + ".zip";
