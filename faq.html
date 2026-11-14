@@ -365,6 +365,25 @@ No. Kite is Linux only.
       </div>
     </details>
     <details>
+      <summary>Vim keys, or a site's own keyboard shortcuts, do nothing on a new page.</summary>
+      <div class="answer">
+      <p>
+        This happened with an input method such as IBus or Fcitx running. It could stay switched
+        on for a page that followed one with the keyboard in a text field, and turned letters
+        into typed text, which a page with nothing to type into drops.
+      </p>
+      <p>
+        Kite 0.9.14 has a possible fix, not yet confirmed with Plasma's own input method. If the
+        keys still go quiet for you, please
+        <a href="https://github.com/n4n0GH/Kite/issues/new">open an issue</a> and attach
+        <code>kite.log</code>, which says when the fix stepped in. It's in
+        <code>~/.local/share/kite/logs/&lt;profile&gt;/</code>
+        (<code>~/.var/app/io.github.n4n0gh.kite/data/kite/logs/&lt;profile&gt;/</code> for the
+        Flatpak).
+      </p>
+      </div>
+    </details>
+    <details>
       <summary>Kite crashed. How do I report it?</summary>
       <div class="answer">
       <p>
