@@ -12,7 +12,8 @@
     overview: "docs/README.md",
     architecture: "docs/architecture.md",
     ui: "docs/ui.md",
-    plugins: "docs/plugins.md"
+    plugins: "docs/plugins.md",
+    performance: "docs/performance.md"
   };
 
   var out = document.getElementById("doc");
