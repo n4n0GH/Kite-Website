@@ -136,6 +136,11 @@ flatpak run io.github.n4n0gh.kite</pre>
       that adds AppImages to your menu and keeps them up to date.</li>
   </ul>
   <p>
+    From 0.10.2 on, the AppImage says where newer versions are published, so
+    <a href="https://github.com/AppImageCommunity/AppImageUpdate">AppImageUpdate</a> and the
+    managers built on it can update it, fetching only the parts that changed.
+  </p>
+  <p>
     KRunner needs restarting once to find Kite:
     <code>systemctl --user restart plasma-krunner</code>. The application launcher picks it
     up at your next login.
