@@ -13,6 +13,7 @@
     architecture: "docs/architecture.md",
     ui: "docs/ui.md",
     plugins: "docs/plugins.md",
+    parental: "docs/parental-controls.md",
     performance: "docs/performance.md"
   };
 
